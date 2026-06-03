@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './about/about.module.css'
+import styles from './contact.module.css'
 
 export default function Contact() {
   return (
