@@ -22,6 +22,7 @@ const STYLES = ['Sport / aggressive', 'Street / commuting', 'Touring / long dist
 const EXPERIENCE = ['Beginner (under 1 year)', 'Intermediate (1–5 years)', 'Advanced (5+ years)']
 const CLIMATES = ['Hot and dry (Mediterranean / Balkans)', 'Temperate (Central Europe)', 'Cold and wet (Northern Europe)', 'Mixed seasons']
 const BUDGETS = ['Under €500', '€500–€1,000', '€1,000–€2,000', '€2,000+']
+const GENDERS = ['Male rider', 'Female rider']
 const PRIORITIES = ['Safety / protection', 'Comfort', 'Looks / style', 'Ventilation', 'Waterproofing', 'Lightweight']
 
 const CATEGORY_EMOJI: Record<string, string> = {
@@ -30,6 +31,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
 
 export default function Home() {
   const [rideStyle, setRideStyle] = useState('Sport / aggressive')
+  const [gender, setGender] = useState('Male rider')
   const [experience, setExperience] = useState('Intermediate (1–5 years)')
   const [climate, setClimate] = useState('Hot and dry (Mediterranean / Balkans)')
   const [budget, setBudget] = useState('€500–€1,000')
@@ -51,7 +53,7 @@ export default function Home() {
       const res = await fetch('/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ style: rideStyle, experience, climate, budget, bike, priorities }),
+        body: JSON.stringify({ style: rideStyle, experience, climate, budget, bike, priorities,gender }),
       })
       const data = await res.json()
       if (data.error) throw new Error(data.error)
@@ -81,7 +83,14 @@ export default function Home() {
       <div className={styles.container}>
         {!result && !loading && (
           <div className={styles.form}>
-            <div className={styles.intro}>
+            <div className={styles.intro}> <div className={styles.field}>
+  <label className={styles.label}>I am a</label>
+  <div className={styles.chips}>
+    {GENDERS.map(g => (
+      <button key={g} className={`${styles.chip} ${gender === g ? styles.active : ''}`} onClick={() => setGender(g)}>{g}</button>
+    ))}
+  </div>
+</div>
               <h2>Find your perfect gear setup</h2>
               <p>Tell us how you ride — we'll build a full kit recommendation matched to your style, climate, and budget.</p>
             </div>
