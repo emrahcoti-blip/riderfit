@@ -72,7 +72,7 @@ export default function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="RiderFit" style={{height: '50px', width: 'auto'}} />
+          <img src="/logo.png" alt="RiderFit" style={{height: '70px', width: 'auto'}} />
         </div>
       </header>
 
