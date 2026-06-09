@@ -1,4 +1,4 @@
-'use client'
+§'use client'
 
 import { useState } from 'react'
 import styles from './page.module.css'
@@ -72,11 +72,7 @@ export default function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <span className={styles.logoMark}>RF</span>
-          <div>
-            <h1 className={styles.logoText}>RiderFit</h1>
-            <p className={styles.logoSub}>AI-powered motorcycle gear advisor</p>
-          </div>
+          <img src="/logo.png" alt="RiderFit" style={{height: '50px', width: 'auto'}} />
         </div>
       </header>
 
