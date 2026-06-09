@@ -5,8 +5,8 @@
 }
 
 .header {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: #111;
+  border-bottom: 1px solid #222;
   padding: 1rem 1.5rem;
   position: sticky;
   top: 0;
