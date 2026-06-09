@@ -205,7 +205,7 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        <p>© 2026 RiderFit · <a href="/about">About</a> · <a href="/contact">Contact</a></p>
+        <p>© 2026 RiderFit · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/impressum">Impressum</a></p>
         <p className={styles.footerSub}>Gear recommendations powered by AI. Always verify fit and safety ratings before purchase.</p>
       </footer>
     </main>
